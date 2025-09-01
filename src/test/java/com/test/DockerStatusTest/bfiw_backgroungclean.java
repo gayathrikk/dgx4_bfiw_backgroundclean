@@ -17,7 +17,7 @@ public class bfiw_backgroungclean {
         String vmIpAddress = "172.20.23.157";
         String username = "appUser";
         String password = "Brain@123";
-        String containerId = "f7caed60a51a";
+        String containerId = "8240cef0c630";
 
         System.out.println("bfiw_backgroungclean Docker ID = " + containerId);
 
@@ -122,4 +122,5 @@ public class bfiw_backgroungclean {
         }
     }
 }
+
 

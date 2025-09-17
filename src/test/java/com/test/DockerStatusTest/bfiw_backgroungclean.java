@@ -14,7 +14,7 @@ public class bfiw_backgroungclean {
     @Test(priority = 1)
     public void bfiw_backgroungclean_Status() {
 
-        String vmIpAddress = "172.20.23.157";
+        String vmIpAddress = "172.20.23.163";
         String username = "appUser";
         String password = "Brain@123";
         String containerId = "8240cef0c630";
@@ -122,5 +122,6 @@ public class bfiw_backgroungclean {
         }
     }
 }
+
 
 

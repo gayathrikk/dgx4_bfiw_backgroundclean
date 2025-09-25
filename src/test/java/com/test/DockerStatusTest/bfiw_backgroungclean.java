@@ -17,12 +17,12 @@ public class bfiw_backgroungclean {
         String vmIpAddress = "172.20.23.163";
         String username = "appUser";
         String password = "Hbplab@123";
-        String containerId = "6cb4b0af6124";
+        String containerName = "bgremove";  
 
-        System.out.println("bfiw_backgroungclean Docker ID = " + containerId);
+        System.out.println("bfiw_backgroungclean Docker Name = " + containerName);
 
-        if (containerId.isEmpty()) {
-            System.out.println("Container ID is required.");
+        if (containerName.isEmpty()) {
+            System.out.println("Container name is required.");
             return;
         }
 
@@ -33,9 +33,9 @@ public class bfiw_backgroungclean {
             session.setConfig("StrictHostKeyChecking", "no");
             session.connect();
 
-            // Execute the docker inspect command to check the container's status
+            // ✅ Using docker name directly
             ChannelExec channel = (ChannelExec) session.openChannel("exec");
-            channel.setCommand("docker inspect --format='{{.State.Status}}' " + containerId);
+            channel.setCommand("docker inspect --format='{{.State.Status}}' " + containerName);
             channel.setInputStream(null);
             channel.setErrStream(System.err);
             BufferedReader reader = new BufferedReader(new InputStreamReader(channel.getInputStream()));
@@ -56,7 +56,7 @@ public class bfiw_backgroungclean {
 
             // If container is not running, send alert
             if (!isRunning) {
-                sendEmailAlert("Hi,\n\n🚨 This is bfiw_backgroungclean Docker. I am currently down. Kindly restart the container at your earliest convenience.");
+                sendEmailAlert("Hi,\n\n🚨 This is bfiw_backgroungclean Docker (bgremove). I am currently down. Kindly restart the container at your earliest convenience.");
                 assert false : "Container is not in the expected state.";
             }
 
@@ -77,12 +77,10 @@ public class bfiw_backgroungclean {
         // CC recipients
         String[] cc = {
             "divya.d@htic.iitm.ac.in",
-            "venip@htic.iitm.ac.in",
-            "meena@htic.iitm.ac.in",
-            "gayathri@htic.iitm.ac.in"
+            "venip@htic.iitm.ac.in"
         };
 
-        String subject = "Docker Container Alert -bfiw_backgroungclean";
+        String subject = "Docker Container Alert - bfiw_backgroungclean";
         final String username = "automationsoftware25@gmail.com";
         final String password = "wjzcgaramsqvagxu"; // App-specific password
 
@@ -102,7 +100,6 @@ public class bfiw_backgroungclean {
             Message message = new MimeMessage(mailSession);
             message.setFrom(new InternetAddress(from, "Docker Monitor"));
 
-            // Convert arrays to comma-separated strings
             message.setRecipients(
                 Message.RecipientType.TO,
                 InternetAddress.parse(String.join(",", to))
@@ -122,8 +119,3 @@ public class bfiw_backgroungclean {
         }
     }
 }
-
-
-
-
-

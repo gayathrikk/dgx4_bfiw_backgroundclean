@@ -9,10 +9,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
-public class bfiw_backgroundclean {
+public class bfiw_backgroungclean {
 
     @Test(priority = 1)
-    public void bfiw_backgroundclean_Status() {
+    public void bfiw_backgroungclean_Status() {
 
         String vmIpAddress = "172.20.23.163";
         String username = "hbp";
@@ -119,6 +119,7 @@ public class bfiw_backgroundclean {
         }
     }
 }
+
 
 
 

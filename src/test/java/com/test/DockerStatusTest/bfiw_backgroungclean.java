@@ -12,12 +12,12 @@ import java.util.Properties;
 public class bfiw_backgroungclean {
 
     @Test(priority = 1)
-    public void bfiw_backgroungclean_Status() {
+    public void bfiw_backgroundclean_Status() {
 
         String vmIpAddress = "172.20.23.163";
         String username = "hbp";
         String password = "hbpsgbclab@123";
-        String containerName = "bgremove";  
+        String containerName = "bfi";  
 
         System.out.println("bfiw_backgroungclean Docker Name = " + containerName);
 
@@ -119,4 +119,5 @@ public class bfiw_backgroungclean {
         }
     }
 }
+
 

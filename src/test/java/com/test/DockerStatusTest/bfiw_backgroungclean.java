@@ -19,7 +19,7 @@ public class bfiw_backgroundclean {
         String password = "hbpsgbclab@123";
         String containerName = "bfi";  
 
-        System.out.println("bfiw_backgroungclean Docker Name = " + containerName);
+        System.out.println("bfiw_backgroundclean Docker Name = " + containerName);
 
         if (containerName.isEmpty()) {
             System.out.println("Container name is required.");
@@ -119,6 +119,7 @@ public class bfiw_backgroundclean {
         }
     }
 }
+
 
 
 

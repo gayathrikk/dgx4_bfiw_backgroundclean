@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
-public class bfiw_backgroungclean {
+public class bfiw_backgroundclean {
 
     @Test(priority = 1)
     public void bfiw_backgroundclean_Status() {
@@ -119,5 +119,6 @@ public class bfiw_backgroungclean {
         }
     }
 }
+
 
 
